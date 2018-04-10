@@ -4,7 +4,8 @@ let postId = 1;
 let addPost = function(postText) {
     let post = {
         text: postText,
-        id: postId
+        id: postId,
+        comments: []
     };
     posts.push(post);
     postId++;
@@ -16,6 +17,7 @@ let renderPosts = function() {
     postList.empty();
     // Display updated beer list
     posts.forEach(function(post) {
+        // Add a div to associate comments with post
         $('<div class="post"> \
         <p data-id="' + post.id + '"> <button type="button" class="remove">REMOVE</button> ' + post.text + '</p> \
         <form><div class="form-group"><input type="text" id="user-name" class="form-control" placeholder="Username"> \
