@@ -16,7 +16,12 @@ let renderPosts = function() {
     postList.empty();
     // Display updated beer list
     posts.forEach(function(post) {
-        $('<p class="post" data-id="' + post.id + '"> <button type="button" class="remove">REMOVE</button> ' + post.text + '</p>').appendTo(postList);
+        $('<div class="post"> \
+        <p data-id="' + post.id + '"> <button type="button" class="remove">REMOVE</button> ' + post.text + '</p> \
+        <form><div class="form-group"><input type="text" id="user-name" class="form-control" placeholder="Username"> \
+        <input type="text" id="comment" class="form-control" placeholder="Comment text"></div> \
+        <button class = "btn btn-primary add-comment" type = "button" >Comment</button> </form> \
+        </div>').appendTo(postList);
     });
 
 }
